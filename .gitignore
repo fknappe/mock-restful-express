@@ -18,3 +18,5 @@ build/
 .sass-cache
 GemFile.lock
 results.json
+routes/
+mocks/
