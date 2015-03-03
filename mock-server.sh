@@ -1,7 +1,7 @@
 #!/bin/sh
 # chkconfig: 2345 95 20
 # description: Node Express Mock Server
-# Lockdown Mock server to run as service
+# Mock server to run as service
 # processname: mock-server
 
 export FOREVER_ROOT=/var/mock-server
