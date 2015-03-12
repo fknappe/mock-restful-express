@@ -26,7 +26,8 @@
         "express": "~3.4.0",
         "fs": "~0.0.2",
         "glob": "~4.4.0",
-        "dynamic-routes": "fknappe/dynamic-routes"
+        "dynamic-routes": "fknappe/dynamic-routes",
+        "node-http-error": "~0.2.0"
     },
     "engines": {
         "node": ">=0.8.0"

@@ -28,11 +28,14 @@ app.use(function (req, res, next) {
     res.set("Expires", "Sat, 26 Jul 1997 05:00:00 GMT");
     next();
 });
- 
-if ('development' == app.get('env')) {
-    app.use(express.errorHandler());
-}
- 
+
+// Error Handler
+app.use(function(err, req, res, next) {
+    console.error('ERROR: %s', err);
+    res.status(err.status || 500);
+    res.send(err.message);
+});
+  
 DynamicRoutes(app, {
     src: __dirname + '/routes/',
     ignore: [],
