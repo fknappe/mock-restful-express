@@ -6,7 +6,7 @@ var express = require('express'),
 
 global.__base = __dirname + '/';    
  
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8880);
 
 // Authenticator
 app.use(express.basicAuth('services', '123456'));
