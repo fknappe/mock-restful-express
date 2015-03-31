@@ -31,7 +31,7 @@ This project is also based on mocked responses, defined programatically in a con
 
 #### Mocks path structure
 
-The mocks path structure are the defined based on routes path. For example, suppose we have an /foo route defined on the project, with support to GET action. The respective mocked reponse path structure is defined as follows:
+The mocks path structure are the defined based on routes path. For example, suppose we have an **/foo** route defined on the project, with support to GET action. The respective mocked reponse path structure is defined as follows:
 
 ```
 - mocks
@@ -42,6 +42,8 @@ The mocks path structure are the defined based on routes path. For example, supp
 |---- foo=bar.json
 ```
 
+This structure should be adapted to define mock response for POST, PUT and DELETE actions whenever necessary.
+
 #### Mock response structure
 
 All mock responses also are based on some conventions, defined in a structure as follows:
@@ -49,7 +51,9 @@ All mock responses also are based on some conventions, defined in a structure as
 ```json
 {
 	"code": 200,
-	"content" : { "bar" }
+	"content" : { 
+		"bar" 
+	}
 }
 ```
 
@@ -74,7 +78,7 @@ A GET request on a route path with query param like **/foo/?foo=bar&bar=foo**, i
 - mocks
 |-- foo
 |--- get
-|---- foo=bar.json
+|---- foo=bar&bar=foo.json
 ```
 
 #### Response for Subresource Request
@@ -91,4 +95,6 @@ A GET request on a route path defined for a subresource like **/foo/1/bar/2**, i
 
 #### Default responses
 
-All requests are conventioned to have a defined mocked response
+All requests are conventioned to have a defined mocked response. For GET methods like **/foo**, its expected to have a *all.json* file define to response for the request. In case of PUT and DELETE methods are conventionally to default response with HTTP Code 204 without any body. In case of POST requests, the default response is defined to have HTTP Code 200 without any body.
+
+In case of some route doesn´t have its respective mocked response, a message will be sent with HTTP Code 404 and body with a descriptive error message.
