@@ -29,16 +29,18 @@ To know better these routes conventions, take a look on the project examples to 
 
 This project is also based on mocked responses, defined programatically in a convetional manner, within the *mocks* folder
 
-* Mocks path structure
+#### Mocks path structure
 
 The mocks path structure are the defined based on routes path. For example, suppose we have an /foo route defined on the project, with support to GET action. The respective mocked reponse path structure is defined as follows:
 
+```
 - mocks
 |-- foo
 |--- get
 |---- all.json
+```
 
-* Mock response structure
+#### Mock response structure
 
 All mock responses also are based on some conventions, defined in a structure as follows:
 
@@ -51,11 +53,11 @@ All mock responses also are based on some conventions, defined in a structure as
 
 This structure defines a response HTTP code (with support to all [HTTP codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)) and payload, represented by *content* node.
 
-* GET response for Path Param
+#### GET response for Path Param
 
-* GET response for Query Param
+#### GET response for Query Param
 
-* Default responses
+#### Default responses
 
 All requests are conventioned to have a defined mocked response
 
