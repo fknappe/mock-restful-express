@@ -31,7 +31,7 @@ This project is also based on mocked responses, defined programatically in a con
 
 #### Mocks path structure
 
-The mocks path structure are the defined based on routes path. For example, suppose we have an **/foo** route defined on the project, with support to GET action. The respective mocked reponse path structure is defined as follows:
+The mocks path structure are the defined based on routes path. For example, suppose we have an **/foo** route defined on the project, with support to GET action. The respective mocked reponse of this route is structured as follows:
 
 ```
 - mocks
@@ -42,7 +42,7 @@ The mocks path structure are the defined based on routes path. For example, supp
 |---- foo=bar.json
 ```
 
-This structure should be adapted to define mock response for POST, PUT and DELETE actions whenever necessary.
+This structure is also adaptive to define mocked responses for POST, PUT and DELETE actions whenever necessary.
 
 #### Mock response structure
 
@@ -93,8 +93,10 @@ A GET request on a route path defined for a subresource like **/foo/1/bar/2**, i
 |---- 1_2.json
 ```
 
-#### Default responses
+#### Default responses with MockHTTP
 
-All requests are conventioned to have a defined mocked response. For GET methods like **/foo**, its expected to have a *all.json* file define to response for the request. In case of PUT and DELETE methods are conventionally to default response with HTTP Code 204 without any body. In case of POST requests, the default response is defined to have HTTP Code 200 without any body.
+All requests received from your project routes could be conventioned to have a defined mocked response. For GET methods like **/foo**, its expected to have a *all.json* file defined to response for the request. In case of PUT or DELETE actions, the default response is agreed to be defined with HTTP Code 204 without any body. In case of POST requests, the default response is defined to have HTTP Code 200 without any body.
 
 In case of some route doesn´t have its respective mocked response, a message will be sent with HTTP Code 404 and body with a descriptive error message.
+
+This behavior could be easily supported by your project's routes through a library MockHTTP, defined on this project. To know better this libray usage, take a look at this project example section.
