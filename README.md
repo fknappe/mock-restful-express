@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fknappe/mock-restful-express.svg)](https://travis-ci.org/fknappe/mock-restful-express)
+
 # mock-restful-express
 
 A RESTful mock server powered by Express.js

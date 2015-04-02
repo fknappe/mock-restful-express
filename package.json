@@ -4,7 +4,7 @@
     "description": "A RESTful mock server powered by Express.js",
     "main": "mock-server.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "./node_modules/.bin/jasmine-node spec/"
     },
     "keywords": [
         "express",
@@ -28,6 +28,9 @@
         "glob": "~4.4.0",
         "dynamic-routes": "fknappe/dynamic-routes",
         "node-http-error": "~0.2.0"
+    },
+    "devDependencies": {
+        "jasmine-node": "~1.14.5"
     },
     "engines": {
         "node": ">=0.8.0"
