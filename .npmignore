@@ -1,9 +1,8 @@
 .git*
+.travis*
 docs/
 examples/
 support/
-test/
-testing.js
+spec/
 .DS_Store
-coverage.html
 lib-cov
