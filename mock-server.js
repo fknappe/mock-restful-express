@@ -1,15 +1,32 @@
+#!/usr/bin/env node
+
 var express = require('express'),
     http = require('http'),
     path = require('path'),
     DynamicRoutes = require('dynamic-routes'),
-    app = express();
+    app = express(),
+    pkginfo = require('pkginfo')(module, 'version');
+    program = require('commander');
 
-global.__base = __dirname + '/';    
- 
-app.set('port', process.env.PORT || 8880);
+// Command Line menu
+program
+    .version(module.exports.version)
+    .usage('[options]')
+    .option('-U, --user [username]', 'Port to execute the server (default: services)')
+    .option('-P, --pass [password]', 'Port to execute the server (default: 123456)')
+    .option('-p, --port [number]', 'Port to execute the server (default: 8880)')
+    .option('-m, --mocksSourcePath [path]', 'Path to mocks')
+    .option('-r, --routesSourcePath [path]', 'Path to routes')
+    .parse(process.argv);
+
+global.__base = __dirname + '/';
+global.__mocksPath = program.mocksSourcePath || process.cwd();
+global.__routesPath = program.routesSourcePath || process.cwd(); 
+
+app.set('port', program.port || 8880);
 
 // Authenticator
-app.use(express.basicAuth('services', '123456'));
+app.use(express.basicAuth(program.user || 'services', program.pass || '123456'));
 app.use(express.bodyParser());
 app.use(express.logger('dev'));
 app.use(express.methodOverride());
@@ -37,12 +54,11 @@ app.use(function(err, req, res, next) {
 });
   
 DynamicRoutes(app, {
-    src: __dirname + '/routes/',
+    src: global.__routesPath + '/routes/',
     ignore: [],
     pattern: /\.js$/
 });
  
 http.createServer(app).listen(app.get('port'), function(){
-    console.log('Express server listening on port ' + app.get('port'));
-});
- 
+    console.log('Mock server listening on port ' + app.get('port'));
+}); 

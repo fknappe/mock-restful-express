@@ -3,6 +3,8 @@
     "version": "0.0.1",
     "description": "A RESTful mock server powered by Express.js",
     "main": "mock-server.js",
+    "preferGlobal": "true",
+    "bin": { "mock-server": "mock-server.js" },
     "scripts": {
         "test": "./node_modules/.bin/jasmine-node spec/"
     },
@@ -27,7 +29,9 @@
         "fs": "~0.0.2",
         "glob": "~4.4.0",
         "dynamic-routes": "fknappe/dynamic-routes",
-        "node-http-error": "~0.2.0"
+        "node-http-error": "~0.2.0",
+        "commander": "~2.7.1",
+        "pkginfo": "~0.3.0"
     },
     "devDependencies": {
         "jasmine-node": "~1.14.5"
