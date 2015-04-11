@@ -29,7 +29,23 @@ To know better these routes conventions, take a look on the project examples to 
 
 ### Project Mocks
 
-This project is also based on mocked responses, defined programatically in a convetional manner, within the **mocks** folder
+This project is also based on mocked responses, defined programatically in a convetional manner, within the **mocks** folder. 
+
+#### Examples
+
+The **/examples** folder within this project contains all the references explained below. To see them in practice, clone this repo and within the root path execute the following command:
+
+```bash
+npm link
+```
+
+This command create a installed link within the global node dependencies folder. To run the mock server, within the **examples** folder, run the following on the terminal:
+
+```bash
+mock-server
+```
+
+This should initiate a new instance of the server on the default port (8880).
 
 #### Mocks path structure
 
@@ -39,8 +55,8 @@ The mocks path structure are the defined based on routes path. For example, supp
 - mocks
 |-- foo
 |--- get
-|---- all.json
 |---- 1.json
+|---- all.json
 |---- foo=bar.json
 ```
 
