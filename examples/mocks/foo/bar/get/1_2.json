@@ -1,0 +1,8 @@
+{
+    "code": 200,
+    "content": {
+        "id": 2,
+        "bar": "buzz",
+        "foo_id": 1
+    }
+}
