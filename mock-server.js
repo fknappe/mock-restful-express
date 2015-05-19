@@ -12,8 +12,8 @@ var express = require('express'),
 program
     .version(module.exports.version)
     .usage('[options]')
-    .option('-U, --user [username]', 'Port to execute the server (default: services)')
-    .option('-P, --pass [password]', 'Port to execute the server (default: 123456)')
+    .option('-U, --user [username]', 'User for basicAuth (default: services)')
+    .option('-P, --pass [password]', 'Password for basicAuth (default: 123456)')
     .option('-p, --port [number]', 'Port to execute the server (default: 8880)')
     .option('-m, --mocksSourcePath [path]', 'Path to mocks')
     .option('-r, --routesSourcePath [path]', 'Path to routes')

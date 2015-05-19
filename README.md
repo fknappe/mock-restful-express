@@ -8,8 +8,6 @@ A RESTful mock server powered by Express.js
 
 1. [Purpouse](#Purpouse)
 2. [Usage](#Usage)
-3. [Project Routes](#Project Routes)
-4. [Project Mocks](#Project Mocks)
 
 ## Purpouse
 
@@ -33,13 +31,13 @@ This project is also based on mocked responses, defined programatically in a con
 
 #### Examples
 
-The **/examples** folder within this project contains all the references explained below. To see them in practice, clone this repo and within the root path execute the following command:
+The **/examples** folder within this project contains all the references explained below. To see them in practice, make the mock-server install through npm, as explained below:
 
 ```bash
-npm link
+npm install mock-restful-express -g
 ```
 
-This command create a installed link within the global node dependencies folder. To run the mock server, within the **examples** folder, run the following on the terminal:
+This command make a installation of this library within node global dependencies folder. To run the mock server, within the **examples** folder, run the following on the terminal:
 
 ```bash
 mock-server
